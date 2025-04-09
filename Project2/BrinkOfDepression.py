@@ -61,12 +61,12 @@ Y_tensor = torch.tensor(Y_scaled, dtype=torch.float32).to(device)
 # Training Parameters and Containers for Results
 # ----------------------
 
-max_iter = 100
+max_iter = 1000
 n_replicates = 1  # Number of networks trained per fold
 loss_fn = torch.nn.MSELoss()  # Mean-squared error loss
 
 # Define candidate numbers for hidden units
-hidden_units_candidates = [1, 2, 4, 8, 16]
+hidden_units_candidates = [ 128, 256,512, 1028, 1028*2, 1028*2*2]
 
 # Lists to store errors and optimal number of hidden neurons for each outer fold
 ANN_errors = []
@@ -197,4 +197,4 @@ biases = [net[i].bias.data.cpu().numpy() for i in [0, 2]]
 tf = [str(net[i]) for i in [1, 2]]
 
 # Draw the neural network diagram
-draw_neural_net(weights, biases, tf, attribute_names=attributeNames)
+# draw_neural_net(weights, biases, tf, attribute_names=attributeNames)
