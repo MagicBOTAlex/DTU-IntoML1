@@ -66,7 +66,7 @@ n_replicates = 1  # Number of networks trained per fold
 loss_fn = torch.nn.MSELoss()  # Mean-squared error loss
 
 # Define candidate numbers for hidden units
-hidden_units_candidates = [ 128, 256,512, 1028, 1028*2, 1028*2*2]
+hidden_units_candidates = [1, 2, 4, 8, 16]
 
 # Lists to store errors and optimal number of hidden neurons for each outer fold
 ANN_errors = []
